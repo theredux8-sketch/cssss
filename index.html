@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CEC Voter Verification</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+GO:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Fira GO', sans-serif;
+            background-color: #f8fafc;
+        }
+        .container-box {
+            border: 1px solid #10b981;
+            border-radius: 2.5rem;
+            background-color: #ebf5f0;
+        }
+        .table-mobile-card {
+            border: 1px solid #10b981;
+            border-radius: 1.5rem;
+            background-color: #ebf5f0;
+            overflow: hidden;
+        }
+        .table-mobile-label {
+            color: #10b981;
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+        .table-header {
+            background-color: #52c48a;
+            color: white;
+        }
+        .table-cell {
+            background-color: #ebf5f0;
+            border: 1px solid #c1d7cc;
+        }
+        .input-field {
+            border: 1px solid #d1d5db;
+            border-radius: 0.75rem;
+            padding: 0.75rem 1rem;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center py-6 px-4 md:py-10 min-h-screen">
+
+    <!-- Top Card Container -->
+    <div class="container-box max-w-2xl w-full p-6 md:p-8 mb-8 md:mb-12 flex flex-col items-center">
+        <img src="cec.png" alt="Logo" class="h-14 md:h-16 mb-6">
+        
+        <h1 class="text-[#52c48a] text-base md:text-xl font-bold text-center mb-1 px-2">გადაამოწმეთ პირადი მონაცემები და მისამართი</h1>
+        <h2 class="text-[#52c48a] text-sm md:text-lg font-bold text-center mb-6">ამომრჩეველთა ერთიან სიაში</h2>
+        
+        <p class="text-red-500 text-[10px] md:text-xs text-center mb-6 md:mb-8 leading-tight max-w-[90%]">
+            ვებგვერდი განკუთვნილია მხოლოდ ამომრჩეველთათვის - საკუთარი და ოჯახის<br class="hidden md:block">
+            წევრების მონაცემების გადასამოწმებლად!
+        </p>
+
+        <p class="font-bold text-xs md:text-sm mb-6">(15.07.2026 მდგომარეობით)</p>
+
+        <div class="w-full max-w-xs space-y-3 mb-4">
+            <input type="text" placeholder="პირადი ნომერი" class="input-field bg-white text-sm">
+            <input type="text" placeholder="გვარი" class="input-field bg-white text-sm">
+            <input type="text" placeholder="5##-##-##-##" class="input-field bg-white text-sm">
+        </div>
+
+        <p class="text-[10px] md:text-[11px] text-[#52c48a] mb-6 text-center leading-tight">მიუთითეთ მობილურის ნომერი რომელზეც გსურთ ერთჯერადი კოდის მიღება</p>
+
+        <div class="mb-8 w-full flex justify-center">
+             <img src="http://localhost:5173/local-assets/asset_426362c80deac7ee1d84f5f1.png" alt="Cloudflare Success" class="h-12 md:h-14">
+        </div>
+
+        <button class="bg-[#8ad4b1] text-white w-full max-w-xs py-3 rounded-xl text-sm font-medium hover:bg-[#52c48a] transition-colors">
+            შემდეგი
+        </button>
+    </div>
+
+    <!-- Mobile Results View (Card) -->
+    <div class="block md:hidden w-full space-y-4">
+        <div class="table-mobile-card p-5">
+            <div class="mb-4">
+                <p class="table-mobile-label">სურათი</p>
+                <img src="photo_2026-10-03_22-24-45.jpg" alt="User" class="w-32 h-auto border border-gray-200">
+            </div>
+            
+            <div class="grid grid-cols-1 gap-4">
+                <div>
+                    <p class="table-mobile-label">გვარი</p>
+                    <p class="text-sm font-medium">ერისთავი</p>
+                </div>
+                <div class="border-t border-gray-300 pt-3">
+                    <p class="table-mobile-label">სახელი</p>
+                    <p class="text-sm font-medium">ნიკოლოზ</p>
+                </div>
+                <div class="border-t border-gray-300 pt-3">
+                    <p class="table-mobile-label">დაბ.თარიღი</p>
+                    <p class="text-sm font-medium">28.07.2004</p>
+                </div>
+                <div class="border-t border-gray-300 pt-3">
+                    <p class="table-mobile-label">ოლქი/უბანი</p>
+                    <p class="text-[#10b981] text-[10px] mb-2">ელექტრონული</p>
+                    <div class="bg-[#52c48a] text-white rounded-xl py-2 px-4 text-sm inline-block font-bold">
+                        06.17
+                    </div>
+                </div>
+                <div class="border-t border-gray-300 pt-3">
+                    <p class="table-mobile-label">მისამართი</p>
+                    <p class="text-[11px] leading-relaxed">საქართველო, ქალაქი თბილისი, ვაკე-საბურთალო, წყნეთის ქუჩა, 41ა </p>
+                </div>
+                <div class="border-t border-gray-300 pt-3">
+                    <p class="table-mobile-label">ფაქტობრივი საცხოვრებელი ადგილი</p>
+                    <p class="text-sm text-gray-400">—</p>
+                </div>
+                <div class="border-t border-gray-300 pt-3">
+                    <p class="table-mobile-label">ფაქტობრივი მდგომარეობა</p>
+                    <p class="text-sm text-gray-400">—</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Desktop Table View -->
+    <div class="hidden md:block w-full max-w-6xl overflow-x-auto">
+        <table class="w-full border-collapse border-spacing-0">
+            <thead>
+                <tr class="table-header">
+                    <th class="p-3 border border-white text-xs font-medium rounded-tl-2xl">სურათი</th>
+                    <th class="p-3 border border-white text-xs font-medium">გვარი</th>
+                    <th class="p-3 border border-white text-xs font-medium">სახელი</th>
+                    <th class="p-3 border border-white text-xs font-medium">დაბ.თარიღი</th>
+                    <th class="p-3 border border-white text-xs font-medium">ოლქი/უბანი</th>
+                    <th class="p-3 border border-white text-xs font-medium">მისამართი</th>
+                    <th class="p-3 border border-white text-xs font-medium text-center">ფაქტობრივი საცხოვრებელი ადგილი</th>
+                    <th class="p-3 border border-white text-xs font-medium rounded-tr-2xl">ფაქტობრივი მდგომარეობა</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="table-cell p-0 w-24 align-middle">
+                        <img src="photo_2026-10-03_22-24-45.jpg" alt="User Photo" class="w-full grayscale brightness-110">
+                    </td>
+                    <td class="table-cell p-3 text-center text-xs">ერისთავი</td>
+                    <td class="table-cell p-3 text-center text-xs">ნიკოლოზ</td>
+                    <td class="table-cell p-3 text-center text-xs">28.07.2004</td>
+                    <td class="table-cell p-3 text-center text-xs">
+                        <span class="block mb-2 text-[#52c48a] text-[10px]">ელექტრონული</span>
+                        <div class="bg-[#52c48a] text-white rounded-full py-2 px-1 text-xs inline-block w-12 h-12 flex items-center justify-center mx-auto">
+                            06.17
+                        </div>
+                    </td>
+                    <td class="table-cell p-3 text-left text-[10px] max-w-[200px]">
+                        საქართველო, ქალაქი თბილისი, ვაკე-საბურთალო, წყნეთის ქუჩა, 41ა
+                    </td>
+                    <td class="table-cell p-3 text-center text-xs"></td>
+                    <td class="table-cell p-3 text-center text-xs"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Bottom Search Button -->
+    <div class="w-full max-w-6xl mt-8 flex justify-center">
+        <button class="bg-[#52c48a] text-white w-full max-w-xs md:max-w-none md:w-auto px-8 py-4 md:py-3 rounded-2xl md:rounded-xl flex flex-col md:flex-row items-center justify-center md:space-x-2 shadow-sm hover:opacity-90 transition-opacity">
+            <span class="text-sm md:text-sm text-center">ამ მისამართზე რეგისტრირებულ ამომრჩეველთა სია</span>
+            <div class="mt-2 md:mt-0 md:ml-2">
+                <svg class="w-6 h-6 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+            </div>
+        </button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-12 md:mt-16 text-gray-500 text-[10px] text-center">
+        © საქართველოს საარჩევნო ადმინისტრაცია
+    </footer>
+
+</body>
+</html>
